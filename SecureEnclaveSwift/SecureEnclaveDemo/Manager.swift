@@ -66,9 +66,9 @@ final class Manager {
     
     private func getKeys() throws -> (`public`: SecureEnclaveKeyData, `private`: SecureEnclaveKeyReference) {
         
-        if let publicKeyRef = try? helper.getPublicKey(), let privateKey = try? helper.getPrivateKey() {
+        if let publicKey = try? helper.getPublicKey(), let privateKeyRef = try? helper.getPrivateKey() {
             
-            return (public: publicKeyRef, private: privateKey)
+            return (public: publicKey, private: privateKeyRef)
         }
         else {
             
